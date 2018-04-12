@@ -10,7 +10,7 @@ class SearchResults extends Component {
     }
 
    handleClick(data){
-    this.props.history.push(`/podcasts/${data}`);
+    this.props.history.push(`/podcast/${data}`);
    }
 
     render(){

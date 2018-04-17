@@ -5,6 +5,7 @@ import { getItunesAPI, getPodcastEpisodes } from "../Actions";
 import { Card } from 'material-ui';
 import AccessTime from 'material-ui/svg-icons/device/access-time';
 import DateRange from 'material-ui/svg-icons/action/date-range';
+import PlayCircleOutline from 'material-ui/svg-icons/av/play-circle-outline';
 
 class Podcast extends Component {
     constructor(props){
@@ -52,9 +53,16 @@ class Podcast extends Component {
 
 
         return this.props.podcastEpisodes.map(episode =>
-            <Card key={episode.guid} style={{marginBottom: 10}}>
+            <Card key={episode.guid} style={{paddingTop: 3, paddingLeft: 3, marginBottom: 10}}>
                 <div style={{display: 'flex'}}>
-                    <div style={{flex: 1}}><img src={this.podcastPicture()} alt={this.props.apiSearchResults[0].title} style={{maxWidth: 150}} /></div>
+                    <div style={{flex: 1, maxWidth: 150, position: 'relative', textAlign: 'center'}}>
+                        <img src={this.podcastPicture()} alt={this.props.apiSearchResults[0].title} style={{width: '100%'}} />
+                        <PlayCircleOutline
+                            color="rgba(255,255,255,.7)"
+                            hoverColor="rgba(0,0,0,.7)"
+                            style={{position: 'absolute', top: '75%', left: '75%', width: '20%', height: '20%'}}
+                        />
+                    </div>
                     <div style={{flex: 6}}>
                         <div style={{fontSize: 20, margin: 5}}>{episode.title}</div>
                         <div style={{display: 'flex', margin: 5}}>

@@ -3,7 +3,6 @@ import { Card } from 'material-ui';
 
 const Result = ({data, handleClick}) => {
 
-
     const sincePublished = (data) => {
         const releaseDate = new Date(data);
         const sinceRelease = Math.abs(new Date() - releaseDate);

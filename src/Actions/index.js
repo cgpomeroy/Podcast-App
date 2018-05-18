@@ -6,6 +6,7 @@ let parser = new Parser();
 export const GET_ITUNES_API = "GET_ITUNES_API";
 export const GET_PODCAST_INFO = "GET_PODCAST_INFO";
 export const GET_PODCAST_EPISODES = "GET_PODCAST_EPISODES";
+export const SET_NOW_PLAYING = "SET_NOW_PLAYING";
 
 export function getItunesAPI(term){
     const ROOT_URL = "https://itunes.apple.com/search?entity=podcast&term=";
@@ -42,5 +43,12 @@ export function getPodcastEpisodes(episodes){
     return {
         type: GET_PODCAST_EPISODES,
         payload: feed
+    }
+}
+
+export function setNowPlaying(episode){
+    return {
+        type: SET_NOW_PLAYING,
+        payload: episode
     }
 }
